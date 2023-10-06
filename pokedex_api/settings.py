@@ -19,9 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nw0d99ms52*=wsh556x@woz*kui&x%+8z8@4*3=@l%g50w4!$c'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,7 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django-extensions',
+    
+    #External Apps
+    'django_extensions',
+    'graphene_django',
+    
+    #Internal Apps
+    'pokedex.apps.PokedexConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +125,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Graphene Config
+
+GRAPHENE = {
+    'SCHEMA': 'pokedex_api.schema.schema',
+}
+
+
+from .local_settings import *
