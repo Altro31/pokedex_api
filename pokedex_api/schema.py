@@ -9,7 +9,7 @@ class Mutation(pokedex_api.Mutation,ObjectType):
 
 schema = Schema(
     query = Query,
-    mutation = Mutation,
+    #mutation = Mutation,
 )
 
 

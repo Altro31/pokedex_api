@@ -13,7 +13,7 @@ class Type(models.Model):
     
 
 class Pokemon(models.Model):
-    number = models.PositiveIntegerField(unique=True)
+    number = models.PositiveIntegerField(unique=True, primary_key=True)
     name = models.CharField(max_length=50)
     height = models.FloatField(blank=True, null=True)
     weight = models.FloatField(blank=True, null=True)
